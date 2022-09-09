@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Neue Haas Grotesk";
+  font-weight: 500;
+  src: url("/fonts/NHaasGroteskTXPro-55Rg.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk";
+  font-weight: 600;
+  src: url("/fonts/NHaasGroteskTXPro-65Md.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk";
+  font-weight: 800;
+  src: url("/fonts/NHaasGroteskTXPro-75Bd.ttf") format("truetype");
+}

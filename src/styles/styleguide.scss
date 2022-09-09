@@ -1,0 +1,49 @@
+@use "env";
+
+.text {
+  color: env.$fg-cream;
+
+  &--uppercase {
+    text-transform: uppercase;
+    font-variant: all-petite-caps;
+    letter-spacing: 0.1rem;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+  &--center {
+    text-align: center;
+  }
+  
+  &--small {
+    @include env.font-small;
+    @include env.font-variant-regular;
+    padding-bottom: 2px;
+  }
+
+  &--medium {
+    @include env.font-medium;
+    @include env.font-variant-medium;
+  }
+
+  &--large {
+    @include env.font-large;
+    @include env.font-variant-bold;
+  }
+}
+
+.invisible {
+  opacity: 0;
+}
+
+/* transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,14 @@
+.nav {
+  text-align: center;
+
+  & ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 16px; 
+  }
+
+  & li {
+    display: flex;
+    padding: 6px 8px;
+  }
+}
