@@ -1,0 +1,13 @@
+@use "../../styles/env";
+
+.region {
+  display: block;
+  width: 100%;
+  margin: 0 auto; 
+  max-width: 100%;
+
+  @include env.min-medium {
+    max-width: env.$max-width;
+    padding: 0;
+  }
+}

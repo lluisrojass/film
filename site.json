@@ -1,0 +1,39 @@
+{
+    "version": "1",
+    "images": [
+        {
+            "id": "UluuOmgUhNTlIg0k+piIGcC1bJPhY9W9UllU0A357cs=",
+            "target": "_blank",
+            "alt": "alt",
+            "href": "/images/UluuOmgUhNTlIg0k+piIGcC1bJPhY9W9UllU0A357cs=.tif",
+            "lazy": true,
+            "srcSets": [
+                {
+                    "src": "/thumbnails/sm/UluuOmgUhNTlIg0k+piIGcC1bJPhY9W9UllU0A357cs=.tif",
+                    "breakpoints": {
+                        "maxPx": 800
+                    },
+                    "default": false,
+                    "mime": "image/tiff"
+                },
+                {
+                    "src": "/thumbnails/md/UluuOmgUhNTlIg0k+piIGcC1bJPhY9W9UllU0A357cs=.tif",
+                    "breakpoints": {
+                        "minPx": 800,
+                        "maxPx": 1200
+                    },
+                    "default": false,
+                    "mime": "image/tiff"
+                },
+                {
+                    "src": "/thumbnails/lg/UluuOmgUhNTlIg0k+piIGcC1bJPhY9W9UllU0A357cs=.tif",
+                    "breakpoints": {
+                        "minPx": 1200
+                    },
+                    "default": true,
+                    "mime": "image/tiff"
+                }
+            ]
+        }
+    ]
+}
