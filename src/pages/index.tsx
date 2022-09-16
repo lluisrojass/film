@@ -6,6 +6,8 @@ import Grid from '../components/Grid';
 import styles from './index.module.scss';
 import siteJson from '../../site.json';
 
+const images = siteJson.images.reverse();
+
 const Archive = () => (
   <div>
     <Head>
@@ -15,7 +17,7 @@ const Archive = () => (
     <div className={styles['archive-container']}>
       <Region>
         <Grid>
-          {siteJson.images.reverse().map(fakeImage => (
+          {images.map(fakeImage => (
             <Thumbnail {...fakeImage} key={fakeImage.id} />
           ))}
         </Grid>

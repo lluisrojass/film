@@ -23,21 +23,12 @@ const Thumbnail: React.FunctionComponent<SiteImage> = ({
 
   return (
     <a id={id} className={styles.anchor} href={href} target={target}>
-      <picture className={styles.picture}>
-        {srcSets.map(srcSet => (
-          <source
-            media={createMediaFromBreakpoints(srcSet.breakpoints)}
-            srcSet={srcSet.src}
-            type={srcSet.mime}
-            key={srcSet.src}
-          />
-        ))}
-        <img 
-          src={defaultSrcSet.src}
-          alt={alt}
-          loading={!!lazy ? 'lazy' : 'eager'}
-        />
-      </picture>
+      <img 
+        className={styles.img}
+        src={defaultSrcSet.src}
+        alt={alt}
+        loading={!!lazy ? 'lazy' : 'eager'}
+      />
     </a>
   );
 }
