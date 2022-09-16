@@ -1,28 +1,8 @@
 import * as React from 'react';
 import styles from './index.module.scss';
+import { SiteImage, SiteBreakpoints } from '../../types';
 
-interface ThumbnailBreakpoints {
-  minPx?: number;
-  maxPx?: number;
-}
-
-interface ThumbnailSrcSet {
-  src: string;
-  mime: string;
-  default?: boolean;
-  breakpoints: ThumbnailBreakpoints;
-}
-
-export interface ThumbnailProps {
-  id: string;
-  href: string;
-  alt: string;
-  target?: "_blank";
-  lazy?: boolean;
-  srcSets: Array<ThumbnailSrcSet>
-}
-
-const Thumbnail: React.FunctionComponent<ThumbnailProps> = ({
+const Thumbnail: React.FunctionComponent<SiteImage> = ({
   id,
   alt,
   lazy,
@@ -32,7 +12,7 @@ const Thumbnail: React.FunctionComponent<ThumbnailProps> = ({
 }) => {
   const defaultSrcSet = srcSets.find(srcSet => srcSet.default) || srcSets[0];
 
-  const createMediaFromBreakpoints = (breakpoint: ThumbnailBreakpoints): string => {
+  const createMediaFromBreakpoints = (breakpoint: SiteBreakpoints): string => {
     let parts = [];
     if (breakpoint.minPx) parts.push(`(min-width: ${breakpoint.minPx}px)`);
     if (breakpoint.maxPx) parts.push(`(max-width: ${breakpoint.maxPx}px)`);
@@ -49,6 +29,7 @@ const Thumbnail: React.FunctionComponent<ThumbnailProps> = ({
             media={createMediaFromBreakpoints(srcSet.breakpoints)}
             srcSet={srcSet.src}
             type={srcSet.mime}
+            key={srcSet.src}
           />
         ))}
         <img 

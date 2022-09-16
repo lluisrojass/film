@@ -25,7 +25,7 @@
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "module": "es6",
+    "module": "esnext",
     "isolatedModules": true
   },
   "exclude": [

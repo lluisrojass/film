@@ -4,7 +4,7 @@ import Region from '../components/Region';
 import Thumbnail from '../components/Thumbnail';
 import Grid from '../components/Grid';
 import styles from './index.module.scss';
-import fakeImages from '../data/fake-images.json';
+import siteJson from '../../site.json';
 
 const Archive = () => (
   <div>
@@ -15,11 +15,8 @@ const Archive = () => (
     <div className={styles['archive-container']}>
       <Region>
         <Grid>
-          {fakeImages.map(fakeImage => (
-            <Thumbnail 
-              {...fakeImage} 
-              target={fakeImage.target as "_blank"} 
-            />
+          {siteJson.images.reverse().map(fakeImage => (
+            <Thumbnail {...fakeImage} key={fakeImage.id} />
           ))}
         </Grid>
       </Region>

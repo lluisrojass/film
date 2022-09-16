@@ -8,7 +8,7 @@ import siteJson from '../../site.json';
 
 class ImportScript {
   private args: Args = new Args(process.argv);
-  private fileId: string = randomBytes(32).toString('base64')
+  private fileId: string = randomBytes(32).toString('hex')
   private thumbnailSizes: Record<string, number> = {
     'sm': 600,
     'md': 800,
@@ -18,13 +18,12 @@ class ImportScript {
 
   public async run() {
     this.imageFile = await this.readImage();
-    console.log(this.fileId);
     this.writeSourceFile();
     this.writeThumbnails();
     this.appendImageIndexFile();
   }
 
-  private writeSourceFile() {
+  private async writeSourceFile() {
     const destinationFile = join(Paths.images, this.getFileWithExtension());
     const imageClone = this.imageFile!.clone();
     this.writeImageFile(destinationFile, imageClone);
@@ -64,7 +63,7 @@ class ImportScript {
             maxPx: 800
           },
           default: false,
-          mime: 'image/tiff'
+          mime: 'image/bmp'
         },
         {
           src: mdThumbnailPath,
@@ -73,7 +72,7 @@ class ImportScript {
             maxPx: 1200
           },
           default: false,
-          mime: 'image/tiff'
+          mime: 'image/bmp'
         },
         {
           src: lgThumbnailPath,
@@ -81,7 +80,7 @@ class ImportScript {
             minPx: 1200
           },
           default: true,
-          mime: 'image/tiff'
+          mime: 'image/bmp'
         }
       ],
     });
@@ -114,7 +113,7 @@ class ImportScript {
   }
 
   private getFileWithExtension() {
-    return `${this.fileId}.tif`;
+    return `${this.fileId}.bmp`;
   }
 }
 
