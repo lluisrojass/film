@@ -55,7 +55,7 @@ class ImportScript {
       target: '_blank',
       alt: 'alt',
       href: imagePath,
-      lazy: true,
+      lazy: false,
       srcSets: [
         {
           src: smThumbnailPath,
